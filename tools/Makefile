@@ -1,9 +1,9 @@
 CC = gcc
-LD = $(CC)
-PRODUCTS = finv_table_gen floor fsqrt_table_gen fsqrt_table_interactive fsqrt i2f fadd fsub fmul finv
+LD = gcc
+PRODUCTS = finv_table_gen floor fsqrt_table_gen fsqrt_table_interactive fsqrt i2f fadd fsub fmul finv f2i
 OBJS = $(PRODUCTS:%=%.o)
 DEPS = $(OBJS:.o=.d)
-CFLAGS = -std=c99 -O0 -g -I.. -I../src
+CFLAGS = -std=c99 -O0 -g -I.. -I../src -Wall -W
 LDFLAGS = -L.. -lm -lfpu
 
 all:$(OBJS) $(PRODUCTS)

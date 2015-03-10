@@ -59,3 +59,6 @@ fabsTest (void);
 
 char *
 fnegTest (void);
+
+char *
+floorTest (void);
