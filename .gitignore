@@ -17,3 +17,9 @@ tools/finv
 tools/finv_table_gen
 tools/fsqrt_table_gen
 tools/fsqrt_table_interactive
+tools/fsub
+tools/i2f
+tools/table
+tools/fmul
+tools/fadd
+test/fabs_test

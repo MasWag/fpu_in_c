@@ -6,7 +6,7 @@
 #include <math.h>
 
 char *
-floorTest (void)
+f2iTest (void)
 {
   for (int i = 0; i < 1000; i++)
     {	
@@ -16,13 +16,13 @@ floorTest (void)
 	uint32_t u;
       } a,c;
       a.s = frand ();
-      c.u = h_floor(a.u);
+      c.u = h_f2i(a.u);
       if (fabs(i2f (a.u)) >= pow (2,31) || isnan (i2f(a.u)))
 	  continue;
 #define max(A,B) ((A) > (B) ? (A) : (B))
       mu_assert ((sprintf
 		  (str,
-		   "test of floor not passed!!\nexpected :%e\nreturned :%d\n%d %d %d",
+		   "test of f2i not passed!!\nexpected :%e\nreturned :%d\n%d %d %d",
 		   i2f(a.u) , c.u,c.u,c.u+1,c.u-1), str),c.s == (int)i2f (a.u));
     }
 
@@ -31,7 +31,7 @@ floorTest (void)
 }
 
 char *
-floorWholeTest (void)
+f2iWholeTest (void)
 {
   for (uint32_t i = 0; i < UINT32_MAX; i++)
     {
@@ -43,11 +43,11 @@ floorWholeTest (void)
       a.u = i;
       if (i2f (a.u) > INT32_MAX || i2f (a.u) < INT32_MIN || isnan (i2f(a.u)))
 	continue;
-      c.u = h_floor(a.u);
+      c.u = h_f2i(a.u);
 #define max(A,B) ((A) > (B) ? (A) : (B))
       mu_assert ((sprintf
 		  (str,
-		   "test of floorWhole not passed!!\nexpected :%d\nreturned :%d\n%g %g %g %d",
+		   "test of f2iWhole not passed!!\nexpected :%d\nreturned :%d\n%g %g %g %d",
 		   (int) i2f(a.u) , c.u,i2f(a.u),i2f(a.u+1),i2f(a.u-1),a.s), str),c.s == (int)i2f (a.u));
     }
   return NULL;

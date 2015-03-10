@@ -28,7 +28,7 @@ uint32_t
 h_i2f (uint32_t);
 
 uint32_t
-h_floor (uint32_t);
+h_ftoi (uint32_t);
 
 bool
 feq (uint32_t,uint32_t);
