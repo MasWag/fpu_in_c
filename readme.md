@@ -19,7 +19,7 @@ faddの仕様
     * +0 + -0 = -0
 
 
-h_floorの仕様
+h_f2iの仕様
 =============
 
 * floatを32bitで渡すと32bit符号付き整数を返す
@@ -47,3 +47,6 @@ feqの仕様
 fltの仕様
 =========
 * flt A B := A < B
+
+
+* h_floorは libmのfloorfと 0 <= in < UINT32\_MAXの範囲で等しいことを確認している
