@@ -28,7 +28,7 @@ h_floor (uint32_t in)
       
       if (expr <= 150)
 	{
-	  uint32_t tmp_mantissa = mantissa & ~((1 << (23 - (expr - 127))) - 1);
+	  uint32_t tmp_mantissa = (mantissa >> (150 - expr)) << (150 - expr);
 	  if (bina (mantissa,(22 - (expr - 127)),0))
 	    {
 	      mantissa = tmp_mantissa + (1 << (23 - (expr - 127)));
